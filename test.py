@@ -20,7 +20,7 @@ if __name__ == '__main__':
     opt.modal_names = dataloader.dataset.get_modal_names()
     n_modal = 1 if 'encoder' in opt.name or 'pix2pix' in opt.name or 'cycle' in opt.name else dataloader.dataset.n_modal
     model = create_model(opt)      # create a model given opt.model and other options
-    model.setup(opt)               # regular setup: load and print networks; create schedulers
+    model.setup(opt)               # regular setup: load networks; create schedulers
     dst_dir = os.path.join(opt.results_dir, opt.name, phase + '-' + str(opt.epoch))
     os.makedirs(dst_dir, exist_ok=True)
 
