@@ -33,6 +33,7 @@ Pillow              8.3.1
 ```
 ## Prepare datasets
 Download the datasets from the official and rearrange the files to the following structure.
+The dataset path can be modified in the PT-GAN/options/\*.yaml file.
 ### BraTS2020
 ```
 MICCAI_BraTS2020_TrainingData
@@ -114,13 +115,13 @@ MultiPIE_Illumination
 For RaFD dataset, you just need to follow the original dataset with the image name like 'Rafd090_01_Caucasian_female_angry_frontal.jpg'. We only select the frontal shooting direction(Rafd090) for training and testing.
 
 ## Train
-Edit the .yaml file of the corresponding dataset and run the following command to train our model.
+Edit the .yaml file of the corresponding dataset for parameters configuration and run the following command to train our model.
 ```
 python train.py options/brats.yaml
 ```
 
 ## Test
-Edit the .yaml file of the corresponding dataset and run the following command to test.
+Edit the .yaml file of the corresponding dataset for parameters configuration and run the following command to test.
 ```
 python test.py options/brats.yaml
 ```
