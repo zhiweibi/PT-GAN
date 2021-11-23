@@ -15,11 +15,11 @@ if __name__ == '__main__':
     opt.n_input_modal = dataloader.dataset.n_modal - 1
     opt.modal_names = dataloader.dataset.get_modal_names()
     model = create_model(opt)      # create a model given opt.model and other options
-    model.setup(opt)               # regular setup: load and print networks; create schedulers
+    model.setup(opt)               # regular setup: load networks; create schedulers
     total_iters = 0                # the total number of training iterations
-    visualizer = Visualizer(opt, dataset_size)  # create a visualizer that display/save images and plots
+    visualizer = Visualizer(opt, dataset_size)  # create a visualizer that save images
 
-    for epoch in range(opt.epoch_count, opt.n_epochs + opt.n_epochs_decay + 1):    # outer loop for different epochs; we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>
+    for epoch in range(opt.epoch_count, opt.n_epochs + opt.n_epochs_decay + 1):    # outer loop for different epochs
         epoch_start_time = time.time()  # timer for entire epoch
         iter_data_time = time.time()    # timer for data loading per iteration
         epoch_iter = 0                  # the number of training iterations in current epoch, reset to 0 every epoch
@@ -52,7 +52,7 @@ if __name__ == '__main__':
                 t_comp = (time.time() - iter_start_time) / opt.batch_size
                 visualizer.print_current_losses(epoch, epoch_iter, loss, t_comp, t_data)
 
-            if total_iters % opt.save_latest_freq == 0:   # cache our latest model every <save_latest_freq> iterations
+            if total_iters % opt.save_latest_freq == 0:
                 print('saving the latest model (epoch %d, total_iters %d)' % (epoch, total_iters))
                 save_suffix = 'latest'
                 model.save_networks(save_suffix)
