@@ -7,6 +7,7 @@ The PyTorch implements of Learning a Prototype Discriminator with RBF for Multim
 
 
 Our method can synthesis clear and nature images and outperforms other state-of-the-art methods on many datasets.
+
 Experiment results on **BraTS2020** dataset.
 <img src="images/comparison_brats.jpg"/>
 
