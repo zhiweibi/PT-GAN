@@ -2,19 +2,19 @@
 
 The PyTorch implements of Learning a Prototype Discriminator with RBF for Multimodal Image Synthesis.
 
-Framework of our method.
+**Framework of our method.**
 <img src="images/framework.jpg"/>
 
-Experiment results on BraTS2020 dataset.
+Experiment results on **BraTS2020** dataset.
 <img src="images/comparison_brats.jpg"/>
 
-Experiment results on ISLES2015 dataset.
+Experiment results on **ISLES2015** dataset.
 <img src="images/comparison_isles.jpg"/>
 
-Experiment results on CMU Multi-PIE dataset.
+Experiment results on **CMU Multi-PIE** dataset.
 <img src="images/comparison_multipie.jpg"/>
 
-Experiment results on RaFD dataset.
+Experiment results on **RaFD** dataset.
 <!-- <img src="images/framework.jpg"/> -->
 
 ## Environment
@@ -114,11 +114,13 @@ MultiPIE_Illumination
 For RaFD dataset, you just need to follow the original dataset with the image name like 'Rafd090_01_Caucasian_female_angry_frontal.jpg'.
 
 ## Train
+Edit the .yaml file of the corresponding dataset and run the following command to train our model.
 ```
 python train.py options/brats.yaml
 ```
 
 ## Test
+Edit the .yaml file of the corresponding dataset and run the following command to test.
 ```
 python test.py options/brats.yaml
 ```
