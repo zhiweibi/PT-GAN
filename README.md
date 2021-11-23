@@ -8,17 +8,17 @@ The PyTorch implements of Learning a Prototype Discriminator with RBF for Multim
 
 Our method can synthesis clear and nature images and outperforms other state-of-the-art methods on many datasets.
 
+Experiment results on **RaFD** dataset.
+<img src="images/comparison_rafd.jpg"/>
+
+Experiment results on **CMU Multi-PIE** dataset.
+<img src="images/comparison_multipie.jpg"/>
+
 Experiment results on **BraTS2020** dataset.
 <img src="images/comparison_brats.jpg"/>
 
 Experiment results on **ISLES2015** dataset.
 <img src="images/comparison_isles.jpg"/>
-
-Experiment results on **CMU Multi-PIE** dataset.
-<img src="images/comparison_multipie.jpg"/>
-
-Experiment results on **RaFD** dataset.
-<!-- <img src="images/framework.jpg"/> -->
 
 ## Environment
 ```
