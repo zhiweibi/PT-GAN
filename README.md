@@ -5,8 +5,8 @@ The PyTorch implements of Learning a Prototype Discriminator with RBF for Multim
 **The overview of our PT-GAN framework.**
 <img src="images/framework.jpg"/>
 
-Our method can synthesis clear and nature images and outperforms other state-of-the-art methods on many datasets.
 
+Our method can synthesis clear and nature images and outperforms other state-of-the-art methods on many datasets.
 Experiment results on **BraTS2020** dataset.
 <img src="images/comparison_brats.jpg"/>
 
@@ -33,8 +33,8 @@ easydict            1.9
 tensorboard         2.5.0
 Pillow              8.3.1
 ```
-## Prepare datasets
-Download the datasets from the official and rearrange the files to the following structure.
+## Datasets
+Download the datasets from the official way and rearrange the files to the following structure.
 The dataset path can be modified in the PT-GAN/options/\*.yaml file.
 ### BraTS2020
 ```
