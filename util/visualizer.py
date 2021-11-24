@@ -4,7 +4,7 @@ from . import util
 from torch.utils.tensorboard import SummaryWriter
 
 class Visualizer():
-    """This class includes several functions that can display/save images and print/save logging information.
+    """This class includes several functions that can save images and print/save logging information.
     """
 
     def __init__(self, opt, datasize):
