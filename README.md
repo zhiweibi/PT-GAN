@@ -117,12 +117,6 @@ MultiPIE_Illumination
 ### RaFD
 For RaFD dataset, you just need to follow the original dataset with the image name like 'Rafd090_01_Caucasian_female_angry_frontal.jpg'. We only select the images shooting from frontal direction (Rafd090) for training and testing.
 
-## Train
-Edit the .yaml file of the corresponding dataset for training configuration and run the following command to train our model.
-```
-python train.py options/brats.yaml
-```
-
 ## Test
 Edit the .yaml file of the corresponding dataset for testing configuration and run the following command to test.
 ```
