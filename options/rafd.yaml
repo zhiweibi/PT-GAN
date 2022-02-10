@@ -11,7 +11,7 @@ batch_size: 1
 checkpoints_dir: ./checkpoints
 continue_train: False
 crop_size: 256
-epoch: latest
+epoch: 300
 epoch_count: 1
 gan_mode: vanilla
 gpu_ids: [0]
