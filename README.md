@@ -111,11 +111,8 @@ MultiPIE_Illumination
 │   ├── ...
 ```
 
-### RaFD
-For RaFD dataset, you just need to follow the original dataset with the image name like 'Rafd090_01_Caucasian_female_angry_frontal.jpg'. We only select the images shooting from frontal direction (Rafd090) for training and testing.
-
 ## Checkpoints
-Our pre-trained models are available at: [Google Drive](https://drive.google.com/file/d/1zgOR8KUYAHlb7HOBOugC_FpDn6EnJjIZ/view?usp=sharing) | [OneDrive](https://1drv.ms/u/s!AsJlLKv0WJvdlG7o028l4l-UR3C3?e=A3e5Dl) | [Baidu Drive](https://pan.baidu.com/s/1tuajwtjg1k5mwZiWLzt12g) Password: eewj
+Our pre-trained models are available at: [Google Drive](https://drive.google.com/file/d/1CqOQHCK9d_811Vw9gIr3rgjGZX7IB3Ke/view?usp=sharing) | [OneDrive](https://1drv.ms/u/s!AsJlLKv0WJvdlG8bDfUNqiHJ3_SP?e=NcjVSx) | [Baidu Drive](https://pan.baidu.com/s/1VDgTMA-umv8BO2T-guBl-A) Password: 7gcx
 
 ## Test
 Edit the .yaml file of the corresponding dataset for testing configuration and run the following command to test.
