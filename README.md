@@ -119,3 +119,4 @@ Edit the .yaml file of the corresponding dataset for testing configuration and r
 ```
 python test.py options/brats.yaml
 ```
+The training code will be released after the paper is accepted.
