@@ -15,7 +15,7 @@ Experiment results on **ISLES2015** dataset.
 <img src="images/comparison_isles.png"/>
 
 Experiment results on **CMU Multi-PIE** dataset.
-<img src="images/comparison_multipie.png"/>
+<img src="images/comparison_multiPIE.png"/>
 
 ## Environment
 ```
