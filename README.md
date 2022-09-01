@@ -3,19 +3,19 @@
 The PyTorch implements of Learning a Prototype Discriminator with RBF for Multimodal Image Synthesis.
 
 **The overview of our PT-GAN framework.**
-<img src="images/framework.jpg"/>
+<img src="images/framework.png"/>
 
 
 Our method can synthesis clear and nature images and outperforms other state-of-the-art methods on many datasets.
 
 Experiment results on **BraTS2020** dataset.
-<img src="images/comparison_brats.jpg"/>
+<img src="images/comparison_brats.png"/>
 
 Experiment results on **ISLES2015** dataset.
-<img src="images/comparison_isles.jpg"/>
+<img src="images/comparison_isles.png"/>
 
 Experiment results on **CMU Multi-PIE** dataset.
-<img src="images/comparison_multipie.jpg"/>
+<img src="images/comparison_multipie.png"/>
 
 ## Environment
 ```
