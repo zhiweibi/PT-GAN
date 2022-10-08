@@ -114,9 +114,14 @@ MultiPIE_Illumination
 ## Checkpoints
 Our pre-trained models are available at: [Google Drive](https://drive.google.com/file/d/1CqOQHCK9d_811Vw9gIr3rgjGZX7IB3Ke/view?usp=sharing) | [OneDrive](https://1drv.ms/u/s!AsJlLKv0WJvdlG8bDfUNqiHJ3_SP?e=NcjVSx) | [Baidu Drive](https://pan.baidu.com/s/1VDgTMA-umv8BO2T-guBl-A) Password: 7gcx
 
+## Train
+Edit the .yaml file of the corresponding dataset for training configuration and run the following command to train.
+```
+python train.py options/brats.yaml
+```
+
 ## Test
 Edit the .yaml file of the corresponding dataset for testing configuration and run the following command to test.
 ```
 python test.py options/brats.yaml
 ```
-The training code will be released after the paper is accepted.
