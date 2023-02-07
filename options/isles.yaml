@@ -8,7 +8,7 @@ continue_train: False
 dataroot: ../data/SISS2015_Training
 test_dataroot: ../data/ISLES2015_SISS_Testing
 dataset: isles
-epoch: latest
+epoch: 300
 epoch_count: 1
 gan_mode: vanilla
 gpu_ids: [0]

@@ -8,7 +8,7 @@ continue_train: False
 dataroot: ../data/MICCAI_BraTS2020_TrainingData
 test_dataroot: ../data/MICCAI_BraTS2020_ValidationData
 dataset: brats
-epoch: latest
+epoch: 300
 epoch_count: 1
 gan_mode: vanilla
 gpu_ids: [0]

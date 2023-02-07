@@ -9,7 +9,7 @@ crop_size: 256
 dataroot: ../data/MultiPIE_Illumination_crop_divide/train
 test_dataroot: ../data/MultiPIE_Illumination_crop_divide/test
 dataset: multipie
-epoch: latest
+epoch: 300
 epoch_count: 1
 gan_mode: vanilla
 gpu_ids: [0]
