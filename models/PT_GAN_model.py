@@ -19,12 +19,12 @@ class PTGANModel(BaseModel):
         # specify the training losses you want to print out.
         self.loss_names = ['G_GAN', 'G_L1', 'G_bce', 'D_real', 'D_fake', 'D_bce', 'rec']
         if self.isTrain:
-            self.model_names = ['G_EN', 'G_DE', 'D']
+            self.model_names = ['G', 'DE', 'D']
         else:  # during test time, only load G
-            self.model_names = ['G_EN', 'G_DE']
-        self.netG_EN = networks.define_MHEncoder(opt.n_input_modal, opt.input_nc+opt.n_input_modal+1, opt.ngf, opt.norm,
+            self.model_names = ['G', 'DE']
+        self.netG = networks.define_MHEncoder(opt.n_input_modal, opt.input_nc+opt.n_input_modal+1, opt.ngf, opt.norm,
                                       not opt.no_dropout, opt.init_type, opt.init_gain, self.gpu_ids)
-        self.netG_DE = networks.define_Decoder(opt.output_nc, opt.ngf, opt.norm, opt.init_type, opt.init_gain, self.gpu_ids)
+        self.netDE = networks.define_Decoder(opt.output_nc, opt.ngf, opt.norm, opt.init_type, opt.init_gain, self.gpu_ids)
 
         if self.isTrain:  # define a discriminator
             self.netD = networks.define_D(opt.input_nc, opt.ndf, opt.norm, opt.init_type,
@@ -36,9 +36,9 @@ class PTGANModel(BaseModel):
             self.criterionGAN = networks.GANLoss(opt.gan_mode).to(self.device)
             self.criterionL1 = torch.nn.L1Loss()
             # initialize optimizers
-            self.optimizer_G = torch.optim.Adam(chain(self.netG_EN.parameters(), self.netG_DE.parameters()),
+            self.optimizer_G = torch.optim.Adam(chain(self.netG.parameters(), self.netDE.parameters()),
                                                 lr=self.opt.lr, betas=(0.5, 0.999))
-            self.optimizer_D = torch.optim.Adam(chain(self.netD.parameters(), self.netG_DE.parameters()),
+            self.optimizer_D = torch.optim.Adam(chain(self.netD.parameters(), self.netDE.parameters()),
                                                 lr=self.opt.lr, betas=(0.5, 0.999))
             self.optimizers.append(self.optimizer_G)
             self.optimizers.append(self.optimizer_D)
@@ -59,7 +59,7 @@ class PTGANModel(BaseModel):
 
     def forward(self):
         """Run forward pass"""
-        self.fake_B = self.netG_DE(self.netG_EN(self.real_A))
+        self.fake_B = self.netDE(self.netG(self.real_A))
 
     def backward_D(self):
         """Calculate loss for the discriminator"""
@@ -77,7 +77,7 @@ class PTGANModel(BaseModel):
         self.loss_D_bce = self.bce_loss_fn(cls_real, y)
         self.loss_D_bce += self.opt.lambda_GP * self.calc_gradient_penalty(self.real_B_no_mask, cls_real)
          # the Reconstructive Regularization is optimized together with the discriminator
-        rec = self.netG_DE(features)
+        rec = self.netDE(features)
         self.loss_rec = self.criterionL1(self.real_B_no_mask, rec) * self.opt.lambda_L1
 
         # combine loss and calculate gradients

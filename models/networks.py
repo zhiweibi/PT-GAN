@@ -159,14 +159,14 @@ class MultiHeadResnetEncoder(nn.Module):
         self.dim_reduce_conv = nn.Conv2d(ngf * 4 * n_input_modal, ngf * 4, kernel_size=1)
         self.relu = nn.ReLU(True)
 
-        resblock = []
+        decoder = []
         mult = 2 ** n_downsampling
         for i in range(n_blocks):  # add ResNet blocks
-            resblock += [
+            decoder += [
                 ResnetBlock(ngf * mult, padding_type=padding_type, norm_layer=norm_layer, use_dropout=use_dropout,
                             use_bias=use_bias)]
 
-        self.resblock = nn.Sequential(*resblock)
+        self.decoder = nn.Sequential(*decoder)
 
     def forward(self, input):
         """Standard forward"""
@@ -182,7 +182,7 @@ class MultiHeadResnetEncoder(nn.Module):
         features = torch.cat(modal_features, dim=1)
         fused_features = self.dim_reduce_conv(features)
         fused_features = self.relu(fused_features)
-        out = self.resblock(fused_features)
+        out = self.decoder(fused_features)
 
         return out
 
